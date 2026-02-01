@@ -12,7 +12,7 @@ const products = [
 
 export default function Products() {
   return (
-    <section className="py-24 bg-zinc-950 relative overflow-hidden">
+    <section id="products" className="py-24 bg-zinc-950 relative overflow-hidden">
       <div className="container relative z-10">
         <div className="mb-16 text-center space-y-4">
            <h2 className="text-4xl md:text-5xl font-bold font-display text-white">Our Selection</h2>
@@ -32,7 +32,7 @@ export default function Products() {
            ))}
         </div>
         
-        <div className="mt-32 relative">
+        <div id="sizes" className="mt-32 relative">
             <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full pointer-events-none" />
             <div className="relative text-center">
                 <h3 className="text-2xl font-bold font-display mb-8 text-white">Industrial & Bulk Formats</h3>

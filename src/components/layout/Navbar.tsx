@@ -46,13 +46,19 @@ export default function Navbar() {
         </Link>
         
         <nav className="hidden md:flex items-center gap-8">
-          {["Products", "Process", "About", "Contact"].map((item) => (
+          {[
+            { name: "About", href: "/about" },
+            { name: "Products", href: "/#products" },
+            { name: "Sizes", href: "/#sizes" },
+            { name: "Process", href: "/#process" },
+            { name: "Contact", href: "/#contact" }
+          ].map((item) => (
             <Link
-              key={item}
-              href={`#${item.toLowerCase()}`}
+              key={item.name}
+              href={item.href}
               className="text-sm font-medium text-gray-300 hover:text-white transition-colors uppercase tracking-widest"
             >
-              {item}
+              {item.name}
             </Link>
           ))}
         </nav>
