@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment, Float } from "@react-three/drei";
+import { OrbitControls, Environment } from "@react-three/drei";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import PureeBubble from "@/components/canvas/PureeBubble";

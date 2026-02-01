@@ -47,7 +47,7 @@ export default function Section2() {
             transition={{ duration: 1, delay: 0.4 }}
             className="text-lg md:text-2xl text-gray-200 leading-relaxed font-light"
           >
-            <strong className="text-white font-bold">Vida Buddies Inc.</strong> is a family-operated business with over <span className="text-primary font-bold">25 years</span> of experience in the food and beverage industry. We are dedicated to delivering exceptional products and services, sourcing the finest ingredients to create memorable experiences for our customers. Whether you're looking for unique food products or beverages for your gatherings, <span className="text-white font-medium">Vida Buddies Inc. is your trusted partner.</span>
+            <strong className="text-white font-bold">Vida Buddies Inc.</strong> is a family-operated business with over <span className="text-primary font-bold">25 years</span> of experience in the food and beverage industry. We are dedicated to delivering exceptional products and services, sourcing the finest ingredients to create memorable experiences for our customers. Whether you&apos;re looking for unique food products or beverages for your gatherings, <span className="text-white font-medium">Vida Buddies Inc. is your trusted partner.</span>
           </motion.p>
         </motion.div>
       </div>

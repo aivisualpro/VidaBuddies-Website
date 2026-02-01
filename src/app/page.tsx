@@ -53,11 +53,11 @@ export default function Home() {
                <div className="grid md:grid-cols-2 gap-16">
                   <div className="space-y-8">
                      <h2 className="text-5xl md:text-7xl font-black font-display tracking-tight text-white leading-[0.9]">
-                        Let's Start a <br />
+                        Let&apos;s Start a <br />
                         <span className="text-primary italic font-serif">Conversation.</span>
                      </h2>
                      <p className="text-xl text-gray-400 font-light leading-relaxed">
-                        Ready to elevate your production with the world's finest fruit purees? Our team is here to support your growth.
+                        Ready to elevate your production with the world&apos;s finest fruit purees? Our team is here to support your growth.
                      </p>
                      <div className="space-y-6">
                         <div className="flex items-center gap-4 text-white">

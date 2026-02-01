@@ -1,17 +1,42 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Canvas } from "@react-three/fiber";
-import { Environment, Float, Sparkles } from "@react-three/drei";
+import { Environment, Float, Sparkles, useTexture } from "@react-three/drei";
+import { getTeamMembers } from "@/app/actions/team";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+function FloatingLeaf() {
+  const texture = useTexture("/images/leaf.png");
+  return (
+    <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
+      <mesh position={[-3, -2, -1]} scale={[2.5, 2.5, 1]}>
+        <planeGeometry />
+        <meshBasicMaterial map={texture} transparent opacity={0.8} />
+      </mesh>
+    </Float>
+  );
+}
+
 export default function AboutPage() {
+  const [team, setTeam] = useState<any[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    async function fetchTeam() {
+      const members = await getTeamMembers();
+      setTeam(members);
+    }
+    fetchTeam();
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
@@ -56,12 +81,7 @@ export default function AboutPage() {
                 <meshStandardMaterial color="#fb923c" roughness={0.1} metalness={0.8} />
              </mesh>
           </Float>
-          <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
-             <mesh position={[-3, -2, -1]}>
-                <torusGeometry args={[0.8, 0.2, 16, 100]} />
-                <meshStandardMaterial color="#ef4444" roughness={0} metalness={0.5} />
-             </mesh>
-          </Float>
+          <FloatingLeaf />
         </Canvas>
       </div>
 
@@ -128,7 +148,7 @@ export default function AboutPage() {
                     At Vida Buddies Inc., we believe that great food and drink are the heartbeat of every great gathering. For over 25 years, our family has been at the center of the food and beverage industry, driven by a simple mission: to bring exceptional flavor and uncompromising quality to every table we serve. 
                  </p>
                  <p className="text-xl text-gray-300 leading-relaxed font-light">
-                    What started as a small passion project has grown into a legacy of excellence, and while our reach has expanded, our hands-on, family-first approach hasn’t changed a bit.
+                    What started as a small passion project has grown into a legacy of excellence, and while our reach has expanded, our hands-on, family-first approach hasn&apos;t changed a bit.
                  </p>
               </div>
               <div className="relative aspect-square">
@@ -136,7 +156,7 @@ export default function AboutPage() {
                  <motion.div 
                    whileHover={{ scale: 1.05 }}
                    transition={{ type: "spring", stiffness: 300 }}
-                   className="relative h-full w-full rounded-3xl overflow-hidden border border-white/10"
+                   className="relative h-full w-full"
                  >
                     <Image 
                       src="/images/peach_splash_mockup.png" 
@@ -167,11 +187,86 @@ export default function AboutPage() {
                     <span className="text-red-500">in Success.</span>
                  </h2>
                  <p className="text-xl text-gray-300 leading-relaxed font-light">
-                    We don't just see ourselves as a supplier; we see ourselves as your partner in growth. Whether you are running a cozy neighborhood cafe or managing a large-scale commercial operation, we understand the unique challenges you face.
+                    We don&apos;t just see ourselves as a supplier; we see ourselves as your partner in growth. Whether you are running a cozy neighborhood cafe or managing a large-scale commercial operation, we understand the unique challenges you face.
                  </p>
                  <p className="text-xl text-gray-300 leading-relaxed font-light">
                     Our quarter-century of experience allows us to provide more than just products. We offer reliability and insight that helps businesses of all sizes thrive, ensuring you have the consistent quality you need to keep your own customers coming back for more.
                  </p>
+              </div>
+           </div>
+        </section>
+
+        {/* VidaTeam Section */}
+        <section className="about-section py-32 relative overflow-hidden bg-black/80">
+           <div className="absolute inset-0 bg-primary/5 blur-[120px] rounded-full translate-y-1/2" />
+           <div className="container relative z-10">
+              <div className="content-box text-center mb-20 space-y-6">
+                 <h2 className="text-5xl md:text-8xl font-black font-display tracking-tight text-white">
+                    The <span className="text-primary italic font-serif">Vida</span> Team.
+                 </h2>
+                 <p className="max-w-3xl mx-auto text-xl text-gray-400 font-light">
+                    A family legacy driven by experts. Meet the dedicated individuals who ensure our standards of taste and quality never falter.
+                 </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <AnimatePresence>
+                   {team.map((member, i) => (
+                     <motion.div
+                       key={member._id}
+                       initial={{ opacity: 0, y: 30 }}
+                       whileInView={{ opacity: 1, y: 0 }}
+                       viewport={{ once: true }}
+                       transition={{ delay: i * 0.1, duration: 0.8 }}
+                       className="group relative h-[500px] rounded-[2.5rem] overflow-hidden bg-zinc-900 border border-white/5 shadow-2xl"
+                     >
+                        {/* Member Image / Placeholder */}
+                        <div className="absolute inset-0 transition-all duration-700 scale-105 group-hover:scale-110 group-hover:opacity-20">
+                           {member.profilePicture ? (
+                             <Image 
+                               src={member.profilePicture} 
+                               alt={member.name} 
+                               fill 
+                               className="object-cover"
+                             />
+                           ) : (
+                             <div className="h-full w-full bg-gradient-to-br from-zinc-800 to-zinc-950 flex items-center justify-center">
+                                <span className="text-9xl font-black text-white/10 uppercase">{member.name[0]}</span>
+                             </div>
+                           )}
+                           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />
+                        </div>
+
+                        {/* Info Overlay */}
+                        <div className="absolute inset-x-0 bottom-0 p-8 space-y-4">
+                           <div className="space-y-1">
+                              <h3 className="text-3xl font-black text-white">{member.name}</h3>
+                              <p className="text-primary font-bold uppercase tracking-widest text-xs">{member.designation}</p>
+                           </div>
+                           
+                           <div className="h-0 group-hover:h-auto overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out translate-y-4 group-hover:translate-y-0">
+                              <p className="text-gray-400 text-sm leading-relaxed font-light">
+                                 {member.bioDescription}
+                              </p>
+                              <div className="flex gap-4 pt-6">
+                                 {member.email && (
+                                   <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary hover:bg-primary hover:text-black transition-colors">
+                                      <Mail className="w-4 h-4" />
+                                   </div>
+                                 )}
+                                 {member.phone && (
+                                   <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primary hover:bg-primary hover:text-black transition-colors">
+                                      <Phone className="w-4 h-4" />
+                                   </div>
+                                 )}
+                              </div>
+                           </div>
+                        </div>
+
+
+                     </motion.div>
+                   ))}
+                 </AnimatePresence>
               </div>
            </div>
         </section>
@@ -190,7 +285,7 @@ export default function AboutPage() {
                     <span className="text-primary">Can Trust.</span>
                  </h2>
                  <p className="text-2xl text-gray-300 leading-relaxed font-light italic">
-                    "The secret to a memorable culinary experience always starts with the ingredients."
+                    &quot;The secret to a memorable culinary experience always starts with the ingredients.&quot;
                  </p>
                  <p className="text-xl text-gray-400 leading-relaxed font-light">
                     That is why we are relentless when it comes to sourcing. We go the extra mile to find the finest components for our food and beverage solutions, ensuring that every item carrying the Vida Buddies name meets the highest standards. We treat every product as if it were being served at our own family dinner table, because to us, quality is a matter of integrity.
@@ -257,9 +352,9 @@ export default function AboutPage() {
                Dedicated to delivering flavor, quality, and service to businesses across the industry.
             </p>
             <div className="flex justify-center gap-12 font-bold text-sm tracking-widest text-gray-400">
-               <a href="/" className="hover:text-primary transition-colors">HOME</a>
-               <a href="/#products" className="hover:text-primary transition-colors">PRODUCTS</a>
-               <a href="/#contact" className="hover:text-primary transition-colors">CONTACT</a>
+               <Link href="/" className="hover:text-primary transition-colors">HOME</Link>
+               <Link href="/#products" className="hover:text-primary transition-colors">PRODUCTS</Link>
+               <Link href="/#contact" className="hover:text-primary transition-colors">CONTACT</Link>
             </div>
             <p className="mt-16 text-zinc-800 text-xs">© 2026 Vida Buddies Inc. All rights reserved.</p>
          </div>
