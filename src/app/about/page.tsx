@@ -2,14 +2,14 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import Footer from "@/components/layout/Footer";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Canvas } from "@react-three/fiber";
 import { Environment, Float, Sparkles, useTexture } from "@react-three/drei";
 import { getTeamMembers } from "@/app/actions/team";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,8 +25,18 @@ function FloatingLeaf() {
   );
 }
 
+interface TeamMember {
+  _id: string;
+  name: string;
+  designation: string;
+  profilePicture?: string;
+  bioDescription?: string;
+  email?: string;
+  phone?: string;
+}
+
 export default function AboutPage() {
-  const [team, setTeam] = useState<any[]>([]);
+  const [team, setTeam] = useState<TeamMember[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -46,10 +56,13 @@ export default function AboutPage() {
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
 
   useEffect(() => {
-    const sections = gsap.utils.toArray(".about-section");
-    sections.forEach((section: any) => {
+    const sections = gsap.utils.toArray(".about-section") as HTMLElement[];
+    sections.forEach((section) => {
+      const contentBox = section.querySelector(".content-box");
+      if (!contentBox) return;
+      
       gsap.fromTo(
-        section.querySelector(".content-box"),
+        contentBox,
         { opacity: 0, y: 100 },
         {
           opacity: 1,
@@ -342,23 +355,7 @@ export default function AboutPage() {
 
       </div>
 
-      {/* Footer Mirror */}
-      <footer className="py-24 bg-black border-t border-white/5 text-center relative z-20">
-         <div className="container">
-            <div className="relative h-20 w-64 mx-auto mb-12">
-               <Image src="/logo_hd.png" alt="Logo" fill className="object-contain" />
-            </div>
-            <p className="text-gray-500 max-w-lg mx-auto mb-12">
-               Dedicated to delivering flavor, quality, and service to businesses across the industry.
-            </p>
-            <div className="flex justify-center gap-12 font-bold text-sm tracking-widest text-gray-400">
-               <Link href="/" className="hover:text-primary transition-colors">HOME</Link>
-               <Link href="/#products" className="hover:text-primary transition-colors">PRODUCTS</Link>
-               <Link href="/#contact" className="hover:text-primary transition-colors">CONTACT</Link>
-            </div>
-            <p className="mt-16 text-zinc-800 text-xs">© 2026 Vida Buddies Inc. All rights reserved.</p>
-         </div>
-      </footer>
+      <Footer />
     </main>
   );
 }

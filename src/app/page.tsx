@@ -1,8 +1,7 @@
 import HeroSlider from "@/components/sections/HeroSlider";
 import Section2 from "@/components/sections/Section2";
 import Products from "@/components/sections/Products";
-import Image from "next/image";
-import Link from "next/link";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -96,25 +95,7 @@ export default function Home() {
          </div>
       </section>
 
-      <footer className="py-24 border-t border-white/5 bg-zinc-950 text-center relative z-10">
-         <div className="container flex flex-col items-center">
-            <div className="relative h-16 w-64 mb-8 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-               <Image 
-                 src="/logo_hd.png" 
-                 alt="Vida Buddies Logo" 
-                 fill 
-                 className="object-contain" 
-               />
-            </div>
-            <div className="flex justify-center gap-8 mb-8 text-sm text-muted-foreground uppercase tracking-widest font-bold">
-                <Link href="/about" className="hover:text-primary transition-colors">About</Link>
-                <Link href="/#products" className="hover:text-primary transition-colors">Products</Link>
-                <Link href="/#sizes" className="hover:text-primary transition-colors">Sizes</Link>
-                <Link href="/#contact" className="hover:text-primary transition-colors">Contact</Link>
-            </div>
-            <p className="text-zinc-600 text-sm">© 2026 Vida Buddies Inc. All rights reserved.</p>
-         </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
