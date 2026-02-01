@@ -25,6 +25,7 @@ export const metadata: Metadata = {
 
 
 import Navbar from "@/components/layout/Navbar";
+import TopTicker from "@/components/layout/TopTicker";
 
 export default function RootLayout({
   children,
@@ -40,6 +41,7 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans antialiased selection:bg-primary selection:text-primary-foreground"
         )}
       >
+        <TopTicker />
         <Navbar />
         {children}
       </body>

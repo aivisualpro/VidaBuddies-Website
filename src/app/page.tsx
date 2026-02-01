@@ -1,14 +1,16 @@
-import Hero from "@/components/sections/Hero";
+import HeroSlider from "@/components/sections/HeroSlider";
+import Section2 from "@/components/sections/Section2";
 import Products from "@/components/sections/Products";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white selection:bg-primary selection:text-black">
-      <Hero />
+      <HeroSlider />
+      <Section2 />
       
       {/* Competitor beating value prop section */}
-      <section className="py-24 bg-white text-black relative z-10">
+      <section id="section3" className="py-24 bg-white text-black relative z-10">
         <div className="container md:flex items-center gap-12">
            <div className="flex-1 space-y-6">
               <h2 className="text-5xl md:text-7xl font-black font-display leading-[0.9]">
@@ -57,7 +59,7 @@ export default function Home() {
                <a href="#" className="hover:text-primary transition-colors">About</a>
                <a href="#" className="hover:text-primary transition-colors">Contact</a>
             </div>
-            <p className="text-zinc-600 text-sm">© 2026 Vida Buddies Purees. All rights reserved.</p>
+            <p className="text-zinc-600 text-sm">© 2026 Vida Buddies Inc. All rights reserved.</p>
          </div>
       </footer>
     </main>

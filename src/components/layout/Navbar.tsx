@@ -6,12 +6,14 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
+
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 40);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -20,13 +22,19 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "left-0 right-0 z-40 transition-all duration-300 font-sans",
+        // Background applies to the whole header stack
         scrolled
-          ? "bg-black/50 backdrop-blur-md border-b border-white/10 py-4"
-          : "bg-transparent py-6"
+          ? "fixed top-0 bg-black/50 backdrop-blur-md border-b border-white/10"
+          : "absolute top-10 bg-transparent"
       )}
     >
-      <div className="container flex items-center justify-between">
+      <div 
+        className={cn(
+            "container flex items-center justify-between transition-all duration-300",
+            scrolled ? "py-2" : "py-4"
+        )}
+      >
         <Link href="/" className="relative h-12 w-48 transition-transform hover:scale-105 active:scale-95">
           <Image
             src="/logo_hd.png"
