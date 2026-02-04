@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import MegaMenu from "./MegaMenu";
 import { ChevronDown } from "lucide-react";
@@ -11,7 +11,6 @@ import { ChevronDown } from "lucide-react";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,17 +19,6 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleMouseEnter = () => {
-    if (timerRef.current) clearTimeout(timerRef.current);
-    setIsMegaMenuOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    timerRef.current = setTimeout(() => {
-      setIsMegaMenuOpen(false);
-    }, 150);
-  };
 
   return (
     <>
@@ -68,12 +56,16 @@ export default function Navbar() {
             ].map((item) => (
               <div
                 key={item.name}
-                onMouseEnter={item.hasMega ? handleMouseEnter : undefined}
-                onMouseLeave={item.hasMega ? handleMouseLeave : undefined}
-                className="relative py-4"
+                className="relative py-4 group"
               >
                 <Link
                   href={item.href}
+                  onClick={(e) => {
+                    if (item.hasMega) {
+                      e.preventDefault();
+                      setIsMegaMenuOpen(!isMegaMenuOpen);
+                    }
+                  }}
                   className={cn(
                     "text-sm font-bold text-gray-300 hover:text-white transition-all uppercase tracking-[0.2em] flex items-center gap-1.5",
                     isMegaMenuOpen && item.hasMega && "text-primary"
@@ -91,12 +83,10 @@ export default function Navbar() {
                     />
                   )}
                 </Link>
-                {item.hasMega && (
-                  <div className={cn(
-                    "absolute bottom-2 left-0 w-full h-0.5 bg-primary scale-x-0 transition-transform duration-300 origin-left",
-                    isMegaMenuOpen && "scale-x-100"
-                  )} />
-                )}
+                <div className={cn(
+                  "absolute bottom-2 left-0 w-full h-0.5 bg-primary scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
+                  isMegaMenuOpen && item.hasMega && "scale-x-100"
+                )} />
               </div>
             ))}
           </nav>
@@ -109,7 +99,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <div>
         <MegaMenu 
           isOpen={isMegaMenuOpen} 
           onClose={() => setIsMegaMenuOpen(false)} 

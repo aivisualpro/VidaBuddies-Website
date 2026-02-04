@@ -89,7 +89,7 @@ const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.98 }}
             transition={{ type: "spring", damping: 25, stiffness: 120 }}
-            className="fixed top-24 left-1/2 -translate-x-1/2 w-[98vw] max-w-7xl bg-[#050505]/95 border border-white/10 rounded-[3rem] shadow-4xl z-[70] overflow-hidden backdrop-blur-3xl"
+            className="fixed top-28 left-1/2 -translate-x-1/2 w-[98vw] max-w-7xl bg-[#050505]/95 border border-white/10 rounded-[3rem] shadow-4xl z-[70] overflow-hidden backdrop-blur-3xl"
             onMouseLeave={onClose}
           >
             {/* Background Atmosphere */}
