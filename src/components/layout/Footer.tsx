@@ -49,19 +49,19 @@ const Footer = () => {
       <div className="container relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           {/* Column 1: Brand Identity */}
-          <div className="space-y-8">
-            <Link href="/" className="block relative w-48 h-16 group">
+          <div className="space-y-8 flex flex-col items-center text-center md:items-start md:text-left">
+            <Link href="/" className="block relative w-64 h-24 group">
               <Image
-                src="/logo_hd.png"
-                alt="Vida Buddies"
+                src="/logo_original.png"
+                alt="Vida Buddies Logo"
                 fill
-                className="object-contain transition-all duration-500 group-hover:scale-105"
+                className="object-contain object-center md:object-left transition-all duration-500 group-hover:scale-105"
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs font-light">
               Crafting premium fruit experiences for over 25 years. We bridge the gap between nature&apos;s finest harvests and your culinary creations.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center md:justify-start">
               {[
                 { icon: Instagram, href: "#" },
                 { icon: Facebook, href: "#" },
@@ -80,14 +80,14 @@ const Footer = () => {
           </div>
 
           {/* Column 2: Navigation */}
-          <div className="space-y-8">
+          <div className="space-y-8 flex flex-col items-center text-center md:items-start md:text-left">
             <h4 className="text-white font-bold uppercase tracking-widest text-xs">Explore</h4>
-            <ul className="space-y-4">
+            <ul className="space-y-4 w-full">
               {footerLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-500 hover:text-primary transition-colors text-sm font-medium flex items-center group"
+                    className="text-gray-500 hover:text-primary transition-colors text-sm font-medium flex items-center justify-center md:justify-start group"
                   >
                     <ArrowRight size={14} className="mr-2 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-primary" />
                     {link.name}
@@ -98,11 +98,11 @@ const Footer = () => {
           </div>
 
           {/* Column 3: Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-8 flex flex-col items-center text-center md:items-start md:text-left">
             <h4 className="text-white font-bold uppercase tracking-widest text-xs">Get in Touch</h4>
-            <ul className="space-y-6">
-              <li className="flex items-start gap-4 group">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all duration-500">
+            <ul className="space-y-6 w-full">
+              <li className="flex flex-col md:flex-row items-center md:items-start gap-4 group">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all duration-500 shrink-0">
                   <Mail size={18} />
                 </div>
                 <div>
@@ -112,8 +112,8 @@ const Footer = () => {
                   </a>
                 </div>
               </li>
-              <li className="flex items-start gap-4 group">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all duration-500">
+              <li className="flex flex-col md:flex-row items-center md:items-start gap-4 group">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all duration-500 shrink-0">
                   <Phone size={18} />
                 </div>
                 <div>
@@ -127,7 +127,7 @@ const Footer = () => {
           </div>
 
           {/* Column 4: Newsletter */}
-          <div className="space-y-8">
+          <div className="space-y-8 flex flex-col items-center text-center md:items-start md:text-left">
             <h4 className="text-white font-bold uppercase tracking-widest text-xs">Updates</h4>
             <div className="space-y-4">
               <p className="text-gray-400 text-sm font-light leading-relaxed">

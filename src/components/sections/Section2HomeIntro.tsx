@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import ScrollDownButton from "@/components/ui/ScrollDownButton";
 
 export default function Section2HomeIntro() {
   return (
@@ -52,14 +53,7 @@ export default function Section2HomeIntro() {
         </motion.div>
       </div>
 
-      <button 
-        onClick={() => document.getElementById("section3")?.scrollIntoView({ behavior: "smooth" })}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 md:left-[calc(var(--container-padding,2rem)+110px)] animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition-opacity z-10"
-      >
-         <div className="h-14 w-8 rounded-full border-2 border-white/20 flex justify-center pt-2 backdrop-blur-sm bg-black/20">
-            <div className="w-1.5 h-3 bg-primary rounded-full shadow-[0_0_10px_orange]" />
-         </div>
-      </button>
+      <ScrollDownButton targetId="section3" />
     </section>
   );
 }

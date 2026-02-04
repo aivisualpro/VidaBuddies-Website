@@ -34,7 +34,7 @@ export default function TopTicker() {
           {/* First set */}
           {loopItems.map((item, i) => (
              <div key={i} className="flex items-center mx-6">
-                <span className="text-xs font-bold tracking-[0.15em] uppercase text-white drop-shadow-sm mr-6">
+                <span className="text-xs font-bold tracking-[0.15em] uppercase text-white drop-shadow-sm mr-12">
                     {item.text}
                 </span>
                 <div className="relative h-10 w-10">
@@ -46,7 +46,7 @@ export default function TopTicker() {
           {/* Duplicate set for seamless loop */}
            {loopItems.map((item, i) => (
              <div key={`dup-${i}`} className="flex items-center mx-6">
-                <span className="text-xs font-bold tracking-[0.15em] uppercase text-white drop-shadow-sm mr-6">
+                <span className="text-xs font-bold tracking-[0.15em] uppercase text-white drop-shadow-sm mr-12">
                     {item.text}
                 </span>
                 <div className="relative h-10 w-10">

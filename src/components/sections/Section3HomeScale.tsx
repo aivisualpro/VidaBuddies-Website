@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import ScrollDownButton from '@/components/ui/ScrollDownButton';
 
 const benefits = [
     {
@@ -238,6 +239,7 @@ export default function Section3HomeScale() {
         </div>
 
       </div>
+      <ScrollDownButton targetId="products" />
     </section>
   );
 }

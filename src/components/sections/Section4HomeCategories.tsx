@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import ScrollDownButton from "@/components/ui/ScrollDownButton";
 
 interface Category {
   name: string;
@@ -87,6 +88,8 @@ export default function Section4HomeCategories() {
         
 
       </div>
+
+      <ScrollDownButton targetId="contact" />
     </section>
   )
 }

@@ -160,14 +160,18 @@ const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                   </div>
                 </div>
 
-                <div className="p-6 rounded-[2rem] bg-gradient-to-br from-primary/20 to-transparent border border-primary/20 space-y-3 group cursor-pointer hover:from-primary/30 transition-all relative overflow-hidden">
+                <Link 
+                  href="/products" 
+                  onClick={onClose}
+                  className="block p-6 rounded-[2rem] bg-gradient-to-br from-primary/20 to-transparent border border-primary/20 space-y-3 group cursor-pointer hover:from-primary/30 transition-all relative overflow-hidden"
+                >
                    <div className="absolute top-0 right-0 w-24 h-24 bg-primary/20 blur-3xl -translate-y-1/2 translate-x-1/2" />
                    <p className="text-primary font-black text-[9px] uppercase tracking-[0.3em] leading-none">Catalog 2026</p>
                    <h5 className="text-white font-bold text-lg leading-tight">Explore Full <br />Product Specifications.</h5>
                    <div className="flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-widest pt-2">
                       View All <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform" />
                    </div>
-                </div>
+                </Link>
               </div>
             </div>
 

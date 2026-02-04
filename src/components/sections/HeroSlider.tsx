@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import PureeBubble from "@/components/canvas/PureeBubble";
 import Image from "next/image";
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import ScrollDownButton from "@/components/ui/ScrollDownButton";
 
 const slides = [
   {
@@ -337,6 +338,126 @@ export default function HeroSlider() {
                 </motion.div>
               )}
 
+              {/* Mockup for Slide 5 - Passion Fruit Drum */}
+              {slide.id === 5 && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8, x: 100, y: 20 }}
+                  animate={{ 
+                    opacity: 1, 
+                    scale: 1, 
+                    x: 0, 
+                    y: [0, -15, 0] 
+                  }}
+                  transition={{ 
+                    opacity: { delay: 1.2, duration: 1 },
+                    scale: { delay: 1.2, duration: 1, type: "spring" },
+                    x: { delay: 1.2, duration: 1 },
+                    y: { repeat: Infinity, duration: 6, ease: "easeInOut" } 
+                  }}
+                  whileHover={{ scale: 1.05, filter: "brightness(1.1)" }}
+                  className="absolute bottom-[10%] right-[5%] z-20 pointer-events-auto hidden md:block max-w-[350px] lg:max-w-[550px]"
+                >
+                  <div className="relative group">
+                    {/* Light Bleed - Purple for Passion Fruit */}
+                    <div className="absolute inset-0 bg-purple-500/20 blur-[80px] rounded-full scale-75 group-hover:bg-purple-500/30 transition-colors duration-700" />
+                    
+                    <Image 
+                      src="/images/passion_fruit_puree_drum.png"
+                      alt="Vida Buddies Passion Fruit Puree Drum"
+                      width={550}
+                      height={550}
+                      className="relative z-10 select-none pointer-events-none transition-all duration-700
+                                 filter blur-[0.4px] brightness(1.05)
+                                 drop-shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
+                      style={{
+                        maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+                        WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+                      }}
+                    />
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Mockup for Slide 6 - Guava Drum */}
+              {slide.id === 6 && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8, x: 100, y: 20 }}
+                  animate={{ 
+                    opacity: 1, 
+                    scale: 1, 
+                    x: 0, 
+                    y: [0, -15, 0] 
+                  }}
+                  transition={{ 
+                    opacity: { delay: 1.2, duration: 1 },
+                    scale: { delay: 1.2, duration: 1, type: "spring" },
+                    x: { delay: 1.2, duration: 1 },
+                    y: { repeat: Infinity, duration: 6, ease: "easeInOut" } 
+                  }}
+                  whileHover={{ scale: 1.05, filter: "brightness(1.1)" }}
+                  className="absolute bottom-[10%] right-[5%] z-20 pointer-events-auto hidden md:block max-w-[350px] lg:max-w-[550px]"
+                >
+                  <div className="relative group">
+                    {/* Light Bleed - Rose for Pink Guava */}
+                    <div className="absolute inset-0 bg-rose-500/20 blur-[80px] rounded-full scale-75 group-hover:bg-rose-500/30 transition-colors duration-700" />
+                    
+                    <Image 
+                      src="/images/guava_puree_drums.png"
+                      alt="Vida Buddies Pink Guava Puree Drum"
+                      width={550}
+                      height={550}
+                      className="relative z-10 select-none pointer-events-none transition-all duration-700
+                                 filter blur-[0.4px] brightness(1.05)
+                                 drop-shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
+                      style={{
+                        maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+                        WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+                      }}
+                    />
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Mockup for Slide 7 - Lime Powder */}
+              {slide.id === 7 && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8, x: 100, y: 20 }}
+                  animate={{ 
+                    opacity: 1, 
+                    scale: 1, 
+                    x: 0, 
+                    y: [0, -15, 0] 
+                  }}
+                  transition={{ 
+                    opacity: { delay: 1.2, duration: 1 },
+                    scale: { delay: 1.2, duration: 1, type: "spring" },
+                    x: { delay: 1.2, duration: 1 },
+                    y: { repeat: Infinity, duration: 6, ease: "easeInOut" } 
+                  }}
+                  whileHover={{ scale: 1.05, filter: "brightness(1.1)" }}
+                  className="absolute bottom-[10%] right-[5%] z-20 pointer-events-auto hidden md:block max-w-[350px] lg:max-w-[550px]"
+                >
+                  <div className="relative group">
+                    {/* Light Bleed - Lime for Lime */}
+                    <div className="absolute inset-0 bg-lime-500/20 blur-[80px] rounded-full scale-75 group-hover:bg-lime-500/30 transition-colors duration-700" />
+                    
+                    <Image 
+                      src="/images/zesty_lime_powder_vidabuddies.png"
+                      alt="Vida Buddies Zesty Lime Powder"
+                      width={550}
+                      height={550}
+                      className="relative z-10 select-none pointer-events-none transition-all duration-700
+                                 filter blur-[0.4px] brightness(1.05)
+                                 drop-shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
+                      style={{
+                        maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+                        WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+                      }}
+                    />
+                  </div>
+                </motion.div>
+              )}
+
             </motion.div>
           )
         ))}
@@ -373,21 +494,7 @@ export default function HeroSlider() {
           ))}
        </div>
 
-      <button 
-        onClick={() => document.getElementById("section2")?.scrollIntoView({ behavior: "smooth" })}
-        className="absolute bottom-8 left-[calc(var(--container-padding,2rem)+110px)] -translate-x-1/2 animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition-opacity z-10 hidden md:block"
-      >
-         <div className="h-14 w-8 rounded-full border-2 border-white/20 flex justify-center pt-2 backdrop-blur-sm bg-black/20">
-            <div className="w-1.5 h-3 bg-primary rounded-full shadow-[0_0_10px_orange]" />
-         </div>
-      </button>
-
-      {/* Mobile center version */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer opacity-70 hover:opacity-100 transition-opacity z-10 md:hidden pointer-events-none">
-         <div className="h-14 w-8 rounded-full border-2 border-white/20 flex justify-center pt-2 backdrop-blur-sm bg-black/20">
-            <div className="w-1.5 h-3 bg-primary rounded-full shadow-[0_0_10px_orange]" />
-         </div>
-      </div>
+      <ScrollDownButton targetId="section2" />
     </section>
   );
 }
