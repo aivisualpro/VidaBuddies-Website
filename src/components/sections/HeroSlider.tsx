@@ -297,6 +297,46 @@ export default function HeroSlider() {
                 </motion.div>
               )}
 
+              {/* Mockup for Slide 4 - Banana Drums */}
+              {slide.id === 4 && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8, x: 100, y: 20 }}
+                  animate={{ 
+                    opacity: 1, 
+                    scale: 1, 
+                    x: 0, 
+                    y: [0, -15, 0] 
+                  }}
+                  transition={{ 
+                    opacity: { delay: 1.2, duration: 1 },
+                    scale: { delay: 1.2, duration: 1, type: "spring" },
+                    x: { delay: 1.2, duration: 1 },
+                    y: { repeat: Infinity, duration: 6, ease: "easeInOut" } 
+                  }}
+                  whileHover={{ scale: 1.05, filter: "brightness(1.1)" }}
+                  className="absolute bottom-[10%] right-[5%] z-20 pointer-events-auto hidden md:block max-w-[350px] lg:max-w-[550px]"
+                >
+                  <div className="relative group">
+                    {/* Light Bleed - Yellow for Banana */}
+                    <div className="absolute inset-0 bg-yellow-400/10 blur-[80px] rounded-full scale-75 group-hover:bg-yellow-400/20 transition-colors duration-700" />
+                    
+                    <Image 
+                      src="/images/banana_puree_drums.png"
+                      alt="Vida Buddines Banana Puree Drum"
+                      width={550}
+                      height={550}
+                      className="relative z-10 select-none pointer-events-none transition-all duration-700
+                                 filter blur-[0.4px] brightness(1.05)
+                                 drop-shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
+                      style={{
+                        maskImage: "radial-gradient(circle at center, black 40%, transparent 85%)",
+                        WebkitMaskImage: "radial-gradient(circle at center, black 40%, transparent 85%)",
+                      }}
+                    />
+                  </div>
+                </motion.div>
+              )}
+
             </motion.div>
           )
         ))}

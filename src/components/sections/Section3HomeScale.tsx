@@ -1,6 +1,7 @@
 "use client";
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 
 const benefits = [
     {
@@ -22,9 +23,51 @@ const benefits = [
 ];
 
 export default function Section3HomeScale() {
+  const [selectedMap, setSelectedMap] = useState<string | null>(null);
+
+  const maps = {
+    brampton: "https://maps.google.com/maps?q=4%20Wilkinson%20Rd%20Unit%204%2C%20Brampton%2C%20Ontario%20L6T4M3&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    newark: "https://maps.google.com/maps?q=104%20Avenue%20C%2C%20Newark%2C%20New%20Jersey%2007114&t=&z=13&ie=UTF8&iwloc=&output=embed"
+  };
+
   return (
     <section id="section3" className="py-32 bg-zinc-950 relative overflow-hidden">
       
+      {/* Map Popup Modal */}
+      <AnimatePresence>
+        {selectedMap && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedMap(null)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative w-full max-w-4xl aspect-video bg-zinc-900 rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
+            >
+              <button 
+                onClick={() => setSelectedMap(null)}
+                className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 flex items-center justify-center text-white backdrop-blur-md transition-colors"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+              <iframe 
+                width="100%" 
+                height="100%" 
+                frameBorder="0" 
+                src={selectedMap}
+                className="w-full h-full grayscale invert-[0.85] contrast-125 brightness-90"
+              />
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-900/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
@@ -111,10 +154,23 @@ export default function Section3HomeScale() {
         <div className="mt-20">
             <div className="grid md:grid-cols-2 gap-8">
                 {/* Location 1: Brampton */}
-                <div className="group relative p-1 rounded-3xl bg-gradient-to-br from-white/10 to-white/5 hover:from-primary hover:to-secondary transition-all duration-500">
+                <div 
+                    onClick={() => setSelectedMap(maps.brampton)}
+                    className="group relative p-1 rounded-3xl bg-gradient-to-br from-white/10 to-white/5 hover:from-primary hover:to-secondary transition-all duration-500 cursor-pointer"
+                >
                    <div className="relative h-full bg-zinc-900/90 backdrop-blur-xl rounded-[1.3rem] p-8 md:p-10 overflow-hidden">
-                      <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                         <svg className="w-32 h-32 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                      <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-60 transition-opacity duration-500 mix-blend-luminosity">
+                          <iframe 
+                            width="100%" 
+                            height="100%" 
+                            frameBorder="0" 
+                            scrolling="no" 
+                            marginHeight={0} 
+                            marginWidth={0} 
+                            src={maps.brampton}
+                            className="w-full h-full grayscale invert scale-110 pointer-events-none"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/20" />
                       </div>
                       
                       <div className="relative z-10 space-y-6">
@@ -139,10 +195,23 @@ export default function Section3HomeScale() {
                 </div>
 
                 {/* Location 2: Newark */}
-                <div className="group relative p-1 rounded-3xl bg-gradient-to-br from-white/10 to-white/5 hover:from-secondary hover:to-accent transition-all duration-500">
+                <div 
+                    onClick={() => setSelectedMap(maps.newark)}
+                    className="group relative p-1 rounded-3xl bg-gradient-to-br from-white/10 to-white/5 hover:from-secondary hover:to-accent transition-all duration-500 cursor-pointer"
+                >
                    <div className="relative h-full bg-zinc-900/90 backdrop-blur-xl rounded-[1.3rem] p-8 md:p-10 overflow-hidden">
-                       <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                         <svg className="w-32 h-32 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                       <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-60 transition-opacity duration-500 mix-blend-luminosity">
+                          <iframe 
+                            width="100%" 
+                            height="100%" 
+                            frameBorder="0" 
+                            scrolling="no" 
+                            marginHeight={0} 
+                            marginWidth={0} 
+                            src={maps.newark}
+                            className="w-full h-full grayscale invert scale-110 pointer-events-none"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-zinc-950/20" />
                       </div>
 
                       <div className="relative z-10 space-y-6">
