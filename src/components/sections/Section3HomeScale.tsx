@@ -83,9 +83,9 @@ export default function Section3HomeScale() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-5xl md:text-7xl font-bold font-display text-white mt-4 leading-[0.9]"
+                className="text-5xl md:text-8xl font-black font-display text-white mt-4 leading-[0.9] tracking-tighter"
             >
-                The Smartest Way to <span className="text-zinc-500">Scale.</span>
+                The Smartest Way to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-orange-400 to-red-500 italic">Scale.</span>
             </motion.h2>
         </div>
 

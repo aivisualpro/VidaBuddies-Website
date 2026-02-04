@@ -44,7 +44,9 @@ export default function Section4HomeCategories() {
     <section id="products" className="py-24 bg-zinc-950 relative overflow-hidden">
       <div className="container relative z-10">
         <div className="mb-16 text-center space-y-4">
-           <h2 className="text-5xl md:text-7xl font-black font-display tracking-tight text-white leading-[0.9]">Our Selection</h2>
+           <h2 className="text-5xl md:text-8xl font-black font-display tracking-tighter text-white leading-[0.9]">
+             Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-orange-400 to-red-500 italic">Selection</span>
+           </h2>
            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">Explor our diverse range of premium fruit categories.</p>
         </div>
         
