@@ -4,7 +4,7 @@ import { useFrame } from "@react-three/fiber";
 import { MeshDistortMaterial, Sphere } from "@react-three/drei";
 import * as THREE from "three";
 
-export default function PureeBubble() {
+export default function PureeBubble({ color = "#f97316" }: { color?: string }) {
   const meshRef = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
@@ -20,7 +20,7 @@ export default function PureeBubble() {
   return (
     <Sphere args={[1, 100, 100]} scale={2.4} ref={meshRef}>
       <MeshDistortMaterial
-        color="#f97316" // Orange-500
+        color={color} // Dynamic color
         attach="material"
         distort={0.4}
         speed={2}

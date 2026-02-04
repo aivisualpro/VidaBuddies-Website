@@ -50,7 +50,7 @@ export default function Navbar() {
         >
           <Link href="/" className="relative h-12 w-48 transition-transform hover:scale-105 active:scale-95">
             <Image
-              src="/logo_hd.png"
+              src="/logo_original.png"
               alt="Vida Buddies Logo"
               fill
               className="object-contain object-left"

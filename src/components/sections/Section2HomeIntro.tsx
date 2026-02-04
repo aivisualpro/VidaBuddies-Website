@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function Section2() {
+export default function Section2HomeIntro() {
   return (
     <section id="section2" className="relative w-full min-h-screen overflow-hidden bg-black flex items-center justify-center">
       {/* Background Video Wrapper */}

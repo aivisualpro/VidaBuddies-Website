@@ -13,6 +13,7 @@ const slides = [
   {
     id: 1,
     type: "3d",
+    color: "#f97316", // Orange
     title: { line1: "Puree", line2: "Perfection." },
     subtitle: "Crafted for the bold. Premium aseptic fruit purees for brewers, bakers, and visionaries.",
     cta: { primary: "Explore Blends", secondary: "Request Sample" },
@@ -32,6 +33,42 @@ const slides = [
     title: { line1: "Taste", line2: "Innovation." },
     subtitle: "Experience the vibrant, natural flavor of 100% real fruit. No additives, just pure taste.",
     cta: { primary: "View Products", secondary: "Contact Us" },
+  },
+  {
+    id: 4,
+    type: "image",
+    color: "#eab308", // Yellow for Banana
+    src: "/images/banana-splash.png",
+    title: { line1: "Lovely", line2: "Banana." },
+    subtitle: "Revolutionary nano-technology for perfect stability. Smooth, creamy, and consistent.",
+    cta: { primary: "See Tech", secondary: "Learn More" },
+  },
+  {
+    id: 5,
+    type: "image",
+    color: "#a855f7", // Purple for Passion Fruit
+    src: "/images/passion-fruit-splash.png",
+    title: { line1: "Exotic", line2: "Passion." },
+    subtitle: "Intense tartness, straight from the tropics. Elevate your brews with pure passion.",
+    cta: { primary: "Try Passion", secondary: "Download Specs" },
+  },
+  {
+    id: 6,
+    type: "image",
+    color: "#f43f5e", // Rose for Pink Guava
+    src: "/images/pink-guava-splash.png",
+    title: { line1: "Tropical", line2: "Guava." },
+    subtitle: "Sweet, aromatic, and perfectly pink. A sensory delight for premium beverages.",
+    cta: { primary: "Get Sample", secondary: "View Profile" },
+  },
+  {
+    id: 7,
+    type: "image",
+    color: "#84cc16", // Lime
+    src: "/images/lime-splash.png",
+    title: { line1: "Zesty", line2: "Lime." },
+    subtitle: "Sharp, refreshing, and critical for balance. The perfect citrus kick.",
+    cta: { primary: "Add Zest", secondary: "Contact Us" },
   },
 ];
 
@@ -70,27 +107,31 @@ export default function HeroSlider() {
             >
               {/* Background Layer */}
               <div className="absolute inset-0 z-0">
-                {slide.type === "3d" ? (
-                  <div className="h-full w-full opacity-80">
-                     <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
-                        <Environment preset="studio" />
-                        <ambientLight intensity={0.5} />
-                        <spotLight position={[10, 10, 10]} angle={0.5} penumbra={1} intensity={2} color="#ffaa00" />
-                        <pointLight position={[-10, -5, -10]} intensity={2} color="#4b0082" />
-                        <PureeBubble />
-                        <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.8} />
-                     </Canvas>
-                  </div>
-                ) : (
-                  <div className="relative h-full w-full">
+                {/* 1. Background Image (Always render if present) */}
+                {slide.src && (
+                  <div className="absolute inset-0 h-full w-full">
                      <Image 
-                        src={slide.src!} 
+                        src={slide.src} 
                         alt="Hero background" 
                         fill 
                         className="object-cover"
                         priority
                      />
                      <div className="absolute inset-0 bg-black/60" /> {/* Dark overlay for text readability */}
+                  </div>
+                )}
+
+                {/* 2. 3D Blob Layer (Only for type='3d') */}
+                {slide.type === "3d" && (
+                  <div className={`absolute inset-0 h-full w-full ${slide.src ? 'mix-blend-screen opacity-90' : 'opacity-80'}`}>
+                     <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
+                        <Environment preset="studio" />
+                        <ambientLight intensity={0.5} />
+                        <spotLight position={[10, 10, 10]} angle={0.5} penumbra={1} intensity={2} color="#ffaa00" />
+                        <pointLight position={[-10, -5, -10]} intensity={2} color="#4b0082" />
+                        <PureeBubble color={(slide as any).color} />
+                        <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.8} />
+                     </Canvas>
                   </div>
                 )}
               </div>
@@ -255,6 +296,7 @@ export default function HeroSlider() {
                   </div>
                 </motion.div>
               )}
+
             </motion.div>
           )
         ))}

@@ -35,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
+        suppressHydrationWarning={true}
         className={cn(
           inter.variable,
           outfit.variable,

@@ -1,48 +1,18 @@
 import HeroSlider from "@/components/sections/HeroSlider";
-import Section2 from "@/components/sections/Section2";
-import Products from "@/components/sections/Products";
+import Section2HomeIntro from "@/components/sections/Section2HomeIntro";
+import Section3HomeScale from "@/components/sections/Section3HomeScale";
+import Section4HomeCategories from "@/components/sections/Section4HomeCategories";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white selection:bg-primary selection:text-black">
       <HeroSlider />
-      <Section2 />
+      <Section2HomeIntro />
       
-      {/* Competitor beating value prop section */}
-      <section id="section3" className="py-24 bg-white text-black relative z-10">
-        <div className="container md:flex items-center gap-12">
-           <div className="flex-1 space-y-6">
-              <h2 className="text-5xl md:text-7xl font-black font-display leading-[0.9]">
-                 Forget <span className="text-zinc-400 line-through decoration-primary decoration-4">Frozen.</span><br />
-                 Go <span className="text-primary">Aseptic.</span>
-              </h2>
-              <p className="text-xl md:text-2xl font-medium text-zinc-600 max-w-lg">
-                 Shelf-stable. Consistent. No cold chain headaches. The smartest way to brew, bake, and create.
-              </p>
-           </div>
-           <div className="flex-1 mt-12 md:mt-0 grid grid-cols-2 gap-4">
-              <div className="p-8 bg-zinc-100 rounded-2xl">
-                 <h3 className="text-4xl font-bold mb-2 text-primary">100%</h3>
-                 <p className="font-bold text-lg">Natural Fruit</p>
-              </div>
-              <div className="p-8 bg-zinc-900 text-white rounded-2xl translate-y-8">
-                 <h3 className="text-4xl font-bold mb-2 text-accent">0%</h3>
-                 <p className="font-bold text-lg">Preservatives</p>
-              </div>
-              <div className="p-8 bg-zinc-900 text-white rounded-2xl">
-                 <h3 className="text-4xl font-bold mb-2">24mo</h3>
-                 <p className="font-bold text-lg">Shelf Life</p>
-              </div>
-              <div className="p-8 bg-zinc-100 rounded-2xl translate-y-8">
-                 <h3 className="text-4xl font-bold mb-2 text-secondary">Global</h3>
-                 <p className="font-bold text-lg">Sourcing</p>
-              </div>
-           </div>
-        </div>
-      </section>
+      <Section3HomeScale />
 
-      <Products />
+      <Section4HomeCategories />
 
       {/* Contact Section */}
       <section id="contact" className="py-24 bg-black relative overflow-hidden">
