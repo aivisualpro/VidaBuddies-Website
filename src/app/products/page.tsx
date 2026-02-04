@@ -8,7 +8,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Footer from "@/components/layout/Footer";
-import ProductsHero3D from "@/components/sections/ProductsHero3D";
+import Section1ProductsHero from "@/components/sections/Section1ProductsHero";
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -116,40 +116,7 @@ export default function ProductsPage() {
         <div className="h-40" />
 
         {/* Hero Section */}
-        <section className="container min-h-[80vh] flex flex-col items-center justify-center relative">
-          <ProductsHero3D />
-          
-          <div className="hero-content max-w-5xl mx-auto text-center space-y-10 relative z-10">
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md"
-            >
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(251,146,60,1)]" />
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary">Aseptic Innovation</span>
-            </motion.div>
-            
-            <h1 className="text-6xl md:text-9xl font-black font-display leading-[0.85] tracking-tight">
-              Nature’s Palette <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-orange-400 to-red-500 italic pb-2">Perfectly Preserved.</span>
-            </h1>
-
-            <p className="text-xl md:text-2xl text-gray-400 font-medium max-w-3xl mx-auto leading-relaxed">
-              Explore our world-class selection of fruit purees. 100% natural, 
-              zero preservatives, and shelf-stable for 24 months.
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-6 pt-10">
-              <button className="px-10 py-5 bg-primary text-black font-black rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20 flex items-center gap-3">
-                DOWNLOAD CATALOG <ArrowRight size={20} />
-              </button>
-              <button className="px-10 py-5 bg-white/5 border border-white/10 text-white font-black rounded-full hover:bg-white/10 active:scale-95 transition-all backdrop-blur-md">
-                REQUEST SAMPLES
-              </button>
-            </div>
-          </div>
-        </section>
+        <Section1ProductsHero />
 
         {/* Search & Filter Bar */}
         <section className="sticky top-24 z-50 py-6">
