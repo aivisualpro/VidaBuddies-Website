@@ -15,7 +15,7 @@ const benefits = [
     },
     {
         title: "24 Month Freshness",
-        desc: "Our aseptic technology locks in nature's profile for up to two years without preservatives.",
+        desc: "Our patented technology locks in nature's profile for up to two years without preservatives.",
         icon: (
              <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
         ),
@@ -108,7 +108,7 @@ export default function Section3HomeScale() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-10 md:p-12">
                      <h3 className="text-3xl md:text-5xl font-black font-display tracking-tight text-white mb-4">Strategic Warehousing</h3>
-                     <p className="text-zinc-300 text-lg max-w-md">Our strategically located fulfillment centers ensure your aseptic purees arrive fresh, fast, and ready for production.</p>
+                     <p className="text-zinc-300 text-lg max-w-md">Our strategically located fulfillment centers ensure your fruit purees arrive fresh, fast, and ready for production.</p>
                 </div>
             </motion.div>
 

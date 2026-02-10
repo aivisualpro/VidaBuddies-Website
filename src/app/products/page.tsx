@@ -25,42 +25,42 @@ const productCategories = [
 
 const products = [
   // Berries & Small Fruits
-  { name: "Blackberry", category: "Berries & Small Fruits", icon: "🍇", image: "/images/hero_slide_splash.png", description: "Deep, intense flavor with high antioxidant content.", specs: ["Aseptic", "100% Natural", "Shelf-stable"] },
-  { name: "Blueberry", category: "Berries & Small Fruits", icon: "🫐", image: "/images/hero_slide_splash.png", description: "Sweet and tangy, perfect for premium beverages.", specs: ["Aseptic", "Non-GMO", "No Added Sugar"] },
-  { name: "Raspberry", category: "Berries & Small Fruits", icon: "/images/icon_raspberry_3d.png", image: "/images/strawberry_splash_final.png", description: "Intense red color and sharp, refreshing taste.", specs: ["Vivid Color", "Natural Aroma", "Aseptic"] },
-  { name: "Strawberry", category: "Berries & Small Fruits", icon: "/images/icon_strawberry_shiny.png", image: "/images/strawberry_splash_mockup.png", description: "The classic choice for consistent sweetness and aroma.", specs: ["Premium Source", "Triple Filtered", "Aseptic"] },
-  { name: "Black Currant", category: "Berries & Small Fruits", icon: "🍇", image: "/images/hero_slide_splash.png", description: "Strong, tart flavor for sophisticated formulations.", specs: ["Intense Flavor", "Rich Color", "Aseptic"] },
+  { name: "Blackberry", category: "Berries & Small Fruits", icon: "🍇", image: "/images/hero_slide_splash.png", description: "Deep, intense flavor with high antioxidant content.", specs: ["100% Natural", "Shelf-stable"] },
+  { name: "Blueberry", category: "Berries & Small Fruits", icon: "🫐", image: "/images/hero_slide_splash.png", description: "Sweet and tangy, perfect for premium beverages.", specs: [ "Non-GMO", "No Added Sugar"] },
+  { name: "Raspberry", category: "Berries & Small Fruits", icon: "/images/icon_raspberry_3d.png", image: "/images/strawberry_splash_final.png", description: "Intense red color and sharp, refreshing taste.", specs: ["Vivid Color", "Natural Aroma"] },
+  { name: "Strawberry", category: "Berries & Small Fruits", icon: "/images/icon_strawberry_shiny.png", image: "/images/strawberry_splash_mockup.png", description: "The classic choice for consistent sweetness and aroma.", specs: ["Premium Source", "Triple Filtered"] },
+  { name: "Black Currant", category: "Berries & Small Fruits", icon: "🍇", image: "/images/hero_slide_splash.png", description: "Strong, tart flavor for sophisticated formulations.", specs: ["Intense Flavor", "Rich Color"] },
 
   // Tropical & Exotic
   { name: "Mango", category: "Tropical & Exotic", icon: "/images/icon_mango_3d.png", image: "/images/mango_splash_mockup.png", description: "Royal Alphonso mangoes, rich and velvety texture.", specs: ["High Brix", "Pure Fruit", "Global Standard"] },
-  { name: "Passion Fruit", category: "Tropical & Exotic", icon: "✨", image: "/images/hero_slide_splash.png", description: "Exotic, aromatic, and perfectly balanced acidity.", specs: ["Aromatic", "Seeds Removed", "Aseptic"] },
+  { name: "Passion Fruit", category: "Tropical & Exotic", icon: "✨", image: "/images/hero_slide_splash.png", description: "Exotic, aromatic, and perfectly balanced acidity.", specs: ["Aromatic", "Seeds Removed"] },
   { name: "Pineapple", category: "Tropical & Exotic", icon: "🍍", image: "/images/hero_slide_splash.png", description: "Tropical sunshine captured in a shelf-stable format.", specs: ["Sweet & Tangy", "Versatile", "Global Sourcing"] },
-  { name: "Pink Guava", category: "Tropical & Exotic", icon: "🌸", image: "/images/hero_slide_splash.png", description: "Soft, floral notes with a beautiful pink hue.", specs: ["Exotic", "Fragrant", "Aseptic"] },
-  { name: "Soursop", category: "Tropical & Exotic", icon: "🍃", image: "/images/hero_slide_splash.png", description: "Unique creamy texture with a citrusy strawberry-like scent.", specs: ["Artisanal", "Unique", "Aseptic"] },
-  { name: "Banana", category: "Tropical & Exotic", icon: "🍌", image: "/images/hero_slide_splash.png", description: "Creamy and consistent, perfect for smoothies.", specs: ["Creamy", "Sweet", "Aseptic"] },
-  { name: "Dragon Fruit", category: "Tropical & Exotic", icon: "🐉", image: "/images/hero_slide_splash.png", description: "Stunning magenta color with subtle sweetness.", specs: ["Vibrant", "Exotic", "Aseptic"] },
-  { name: "Papaya", category: "Tropical & Exotic", icon: "🧡", image: "/images/hero_slide_splash.png", description: "Sun-ripened tropical sweetness with delicate aroma.", specs: ["High Brix", "Natural", "Aseptic"] },
+  { name: "Pink Guava", category: "Tropical & Exotic", icon: "🌸", image: "/images/hero_slide_splash.png", description: "Soft, floral notes with a beautiful pink hue.", specs: ["Exotic", "Fragrant"] },
+  { name: "Soursop", category: "Tropical & Exotic", icon: "🍃", image: "/images/hero_slide_splash.png", description: "Unique creamy texture with a citrusy strawberry-like scent.", specs: ["Artisanal", "Unique"] },
+  { name: "Banana", category: "Tropical & Exotic", icon: "🍌", image: "/images/hero_slide_splash.png", description: "Creamy and consistent, perfect for smoothies.", specs: ["Creamy", "Sweet"] },
+  { name: "Dragon Fruit", category: "Tropical & Exotic", icon: "🐉", image: "/images/hero_slide_splash.png", description: "Stunning magenta color with subtle sweetness.", specs: ["Vibrant", "Exotic"] },
+  { name: "Papaya", category: "Tropical & Exotic", icon: "🧡", image: "/images/hero_slide_splash.png", description: "Sun-ripened tropical sweetness with delicate aroma.", specs: ["High Brix", "Natural"] },
 
   // Citrus & Orchard
   { name: "Peach", category: "Citrus & Orchard", icon: "/images/peach_splash_mockup.png", image: "/images/peach_splash_mockup.png", description: "Sun-ripened peaches, smooth and naturally sweet.", specs: ["Stone Fruit", "Velvety", "100% Pure"] },
-  { name: "Lemon", category: "Citrus & Orchard", icon: "🍋", image: "/images/hero_slide_splash.png", description: "Zesty and bright, the ultimate flavor enhancer.", specs: ["High Acid", "Citrus Burst", "Aseptic"] },
-  { name: "Orange", category: "Citrus & Orchard", icon: "🍊", image: "/images/hero_slide_splash.png", description: "Universal appeal with consistent citrus brightness.", specs: ["Classic", "Vitamin C", "Aseptic"] },
-  { name: "Blood orange", category: "Citrus & Orchard", icon: "🔴", image: "/images/hero_slide_splash.png", description: "Dramatic crimson color with a raspberry-like citrus note.", specs: ["Exotic Citrus", "Vivid", "Aseptic"] },
-  { name: "Lime", category: "Citrus & Orchard", icon: "🟢", image: "/images/hero_slide_splash.png", description: "Sharp and refreshing, essential for culinary balance.", specs: ["Zesty", "Tart", "Aseptic"] },
-  { name: "Tangerine", category: "Citrus & Orchard", icon: "🍊", image: "/images/hero_slide_splash.png", description: "Sweet, citrusy, and lighter than traditional orange.", specs: ["Fragrant", "Sweet Citrus", "Aseptic"] },
-  { name: "Apple", category: "Citrus & Orchard", icon: "🍎", image: "/images/hero_slide_splash.png", description: "Crisp and clean, the perfect base for any blend.", specs: ["Versatile", "Clear", "Aseptic"] },
-  { name: "Pear", category: "Citrus & Orchard", icon: "🍐", image: "/images/hero_slide_splash.png", description: "Subtle grainy texture with delicate sweetness.", specs: ["Mild", "Texture", "Aseptic"] },
-  { name: "Plum", category: "Citrus & Orchard", icon: "🟣", image: "/images/hero_slide_splash.png", description: "Rich, deep flavor with balanced acidity.", specs: ["Dark Fruit", "Aromatic", "Aseptic"] },
+  { name: "Lemon", category: "Citrus & Orchard", icon: "🍋", image: "/images/hero_slide_splash.png", description: "Zesty and bright, the ultimate flavor enhancer.", specs: ["High Acid", "Citrus Burst"] },
+  { name: "Orange", category: "Citrus & Orchard", icon: "🍊", image: "/images/hero_slide_splash.png", description: "Universal appeal with consistent citrus brightness.", specs: ["Classic", "Vitamin C"] },
+  { name: "Blood orange", category: "Citrus & Orchard", icon: "🔴", image: "/images/hero_slide_splash.png", description: "Dramatic crimson color with a raspberry-like citrus note.", specs: ["Exotic Citrus", "Vivid"] },
+  { name: "Lime", category: "Citrus & Orchard", icon: "🟢", image: "/images/hero_slide_splash.png", description: "Sharp and refreshing, essential for culinary balance.", specs: ["Zesty", "Tart"] },
+  { name: "Tangerine", category: "Citrus & Orchard", icon: "🍊", image: "/images/hero_slide_splash.png", description: "Sweet, citrusy, and lighter than traditional orange.", specs: ["Fragrant", "Sweet Citrus"] },
+  { name: "Apple", category: "Citrus & Orchard", icon: "🍎", image: "/images/hero_slide_splash.png", description: "Crisp and clean, the perfect base for any blend.", specs: ["Versatile", "Clear"] },
+  { name: "Pear", category: "Citrus & Orchard", icon: "🍐", image: "/images/hero_slide_splash.png", description: "Subtle grainy texture with delicate sweetness.", specs: ["Mild", "Texture"] },
+  { name: "Plum", category: "Citrus & Orchard", icon: "🟣", image: "/images/hero_slide_splash.png", description: "Rich, deep flavor with balanced acidity.", specs: ["Dark Fruit", "Aromatic"] },
 
   // Harvest & Unique
-  { name: "Carrot", category: "Harvest & Unique", icon: "🥕", image: "/images/hero_slide_splash.png", description: "Earthly sweetness for health-focused formulations.", specs: ["Beta-Carotene", "Rich Color", "Aseptic"] },
-  { name: "Ginger", category: "Harvest & Unique", icon: "🫚", image: "/images/hero_slide_splash.png", description: "Spicy and bold, perfect for craft beverages.", specs: ["Spicy", "Potent", "Aseptic"] },
-  { name: "Goldenberry", category: "Harvest & Unique", icon: "🟡", image: "/images/hero_slide_splash.png", description: "Tangy and tart with a unique tropical twist.", specs: ["Superfruit", "Tart", "Aseptic"] },
-  { name: "Red Prickly Pear", category: "Harvest & Unique", icon: "🌵", image: "/images/hero_slide_splash.png", description: "Vibrant desert fruit with a melon-like flavor.", specs: ["Neon Color", "Unique", "Aseptic"] },
-  { name: "Pumpkin", category: "Harvest & Unique", icon: "🎃", image: "/images/hero_slide_splash.png", description: "Seasonal favorite with smooth, rich texture.", specs: ["Autumn Harvest", "Smooth", "Aseptic"] },
-  { name: "Grapefruit", category: "Harvest & Unique", icon: "🍊", image: "/images/hero_slide_splash.png", description: "Sophisticated bitterness with bright citrus notes.", specs: ["Zesty", "Tart", "Aseptic"] },
-  { name: "Watermelon", category: "Harvest & Unique", icon: "🍉", image: "/images/hero_slide_splash.png", description: "Refreshing and light, captures the essence of summer.", specs: ["Hydrating", "Sweet", "Aseptic"] },
-  { name: "Dark Sweet Cherry", category: "Harvest & Unique", icon: "🍒", image: "/images/hero_slide_splash.png", description: "Plump, juicy cherries with intense color and flavor.", specs: ["Luxury", "Rich", "Aseptic"] },
+  { name: "Carrot", category: "Harvest & Unique", icon: "🥕", image: "/images/hero_slide_splash.png", description: "Earthly sweetness for health-focused formulations.", specs: ["Beta-Carotene", "Rich Color"] },
+  { name: "Ginger", category: "Harvest & Unique", icon: "🫚", image: "/images/hero_slide_splash.png", description: "Spicy and bold, perfect for craft beverages.", specs: ["Spicy", "Potent"] },
+  { name: "Goldenberry", category: "Harvest & Unique", icon: "🟡", image: "/images/hero_slide_splash.png", description: "Tangy and tart with a unique tropical twist.", specs: ["Superfruit", "Tart"] },
+  { name: "Red Prickly Pear", category: "Harvest & Unique", icon: "🌵", image: "/images/hero_slide_splash.png", description: "Vibrant desert fruit with a melon-like flavor.", specs: ["Neon Color", "Unique"] },
+  { name: "Pumpkin", category: "Harvest & Unique", icon: "🎃", image: "/images/hero_slide_splash.png", description: "Seasonal favorite with smooth, rich texture.", specs: ["Autumn Harvest", "Smooth"] },
+  { name: "Grapefruit", category: "Harvest & Unique", icon: "🍊", image: "/images/hero_slide_splash.png", description: "Sophisticated bitterness with bright citrus notes.", specs: ["Zesty", "Tart"] },
+  { name: "Watermelon", category: "Harvest & Unique", icon: "🍉", image: "/images/hero_slide_splash.png", description: "Refreshing and light, captures the essence of summer.", specs: ["Hydrating", "Sweet"] },
+  { name: "Dark Sweet Cherry", category: "Harvest & Unique", icon: "🍒", image: "/images/hero_slide_splash.png", description: "Plump, juicy cherries with intense color and flavor.", specs: ["Luxury", "Rich"] },
 ];
 
 export default function ProductsPage() {
@@ -261,7 +261,7 @@ export default function ProductsPage() {
 
                     <p className="text-xl text-zinc-600 font-medium leading-relaxed">
                       From 20L BIBs to 200L Steel Drums, we provide the logistic consistency your 
-                      production line demands. Global delivery, aseptic integrity, every time.
+                      production line demands. Global delivery, integrity, every time.
                     </p>
 
                     <div className="grid grid-cols-2 gap-6 pt-6">

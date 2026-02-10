@@ -41,7 +41,7 @@ export default function Hero() {
             <span className="block drop-shadow-2xl">Perfection.</span>
           </h1>
           <p className="max-w-xl text-xl text-gray-300 md:text-2xl font-light">
-            Crafted for the bold. Premium aseptic fruit purees for brewers, bakers, and visionaries who demand the absolute best.
+            Crafted for the bold. Premium fruit purees for brewers, bakers, and visionaries who demand the absolute best.
           </p>
           <div className="flex flex-wrap gap-6 pt-4">
              <Button size="lg" className="text-lg px-8 py-6 rounded-full bg-primary hover:bg-primary/90 text-black font-bold shadow-[0_0_30px_rgba(251,146,60,0.6)] transition-transform hover:scale-105 active:scale-95">

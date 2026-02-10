@@ -16,7 +16,7 @@ const slides = [
     type: "3d",
     color: "#f97316", // Orange
     title: { line1: "Puree", line2: "Perfection." },
-    subtitle: "Crafted for the bold. Premium aseptic fruit purees for brewers, bakers, and visionaries.",
+    subtitle: "Crafted for the bold. Premium fruit purees for brewers, bakers, and visionaries.",
     cta: { primary: "Explore Blends", secondary: "Request Sample" },
   },
   {

@@ -1,6 +1,6 @@
 # Vida Buddies Purees
 
-Premium Aseptic Fruit Purees Website. Built with the "Best of the Best" technologies.
+Premium Fruit Purees Website. Built with the "Best of the Best" technologies.
 
 ## Technology Stack
 - **Framework**: Next.js 16 (App Router)
