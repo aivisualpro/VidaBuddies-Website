@@ -23,7 +23,7 @@ export default function Section5HomeContact() {
                         <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
                             <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                         </div>
-                        <span className="text-lg font-medium">sales@vidabuddies.com</span>
+                        <span className="text-lg font-medium">andres@vidabuddies.com</span>
                     </div>
                     <div className="flex items-center gap-4 text-white">
                         <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
